@@ -1,0 +1,40 @@
+﻿<Window x:Class="DoctorStrange.ShowAll"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoctorStrange"
+        mc:Ignorable="d"
+        Title="ShowAll" Height="450" Width="800" x:Name="SearchForAll" Loaded="SearchForAll_Loaded" Background="AliceBlue">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="160*"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition Width="460*"></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel x:Name="stpSearchbar" Width="Auto" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" CanVerticallyScroll="True" >
+            <TextBox KeyUp="TextBox_KeyUp" x:Name="textBox" Height="30"   Margin="5,5,10,5" TextChanged="textBox_TextChanged" KeyDown="textBox_KeyDown"  />
+            <Border Width="auto" Height="150" BorderBrush="Black" BorderThickness="1" Background="White" Margin="8,8,10,8">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel x:Name="resultStack"  ></StackPanel>
+                </ScrollViewer>
+            </Border>
+        </StackPanel>
+        <DataGrid  Name="grdResult" Width="Auto"   AutoGenerateColumns="False" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Stretch">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="رقم الملف " Binding="{Binding ID}" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn Header="الاسم" Binding="{Binding PName ,Mode=TwoWay}"  IsReadOnly="False" Width="30*"/>
+                <DataGridTextColumn Header="اسم العائله"  Binding="{Binding FName}" IsReadOnly="True" Width="40*"/>
+                <DataGridTextColumn Header=" تاريخ الميلاد" Binding="{Binding DOfBirth}" IsReadOnly="True" Width="25*"/>
+                <DataGridTextColumn Header="الهاتف" Binding="{Binding Phone}" IsReadOnly="True" Width="30*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

@@ -1,0 +1,87 @@
+﻿<Window x:Class="DoctorStrange.newPatient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoctorStrange"
+        mc:Ignorable="d"
+        Title="اضافة مريض جديد " Height="600" Width="500" x:Name="AddNewPatient" Background="AliceBlue">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold" Content="اسم المريض " HorizontalAlignment="Stretch" />
+        <TextBox x:Name="txtNameOfP" Grid.Column="3" Grid.Row="1"  Foreground="Black"  VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="1" Width="150" ToolTip="تاريخ الميلاد "/>
+
+        <Label Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold" Content="اسم الاب " HorizontalAlignment="Stretch" />
+        <TextBox x:Name="txtNameOfPF" Grid.Column="3" Grid.Row="2"  Foreground="Black"  VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="1" Width="150"  ToolTip="تاريخ الميلاد "/>
+
+        <Label Grid.Column="1" Grid.Row="3" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold" Content="اسم العائله " HorizontalAlignment="Stretch" />
+        <TextBox x:Name="txtNameOfFamily" Grid.Column="3" Grid.Row="3"  Foreground="Black"  VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="1" Width="150"  ToolTip="تاريخ الميلاد "/>
+
+        <Label Grid.Column="1" Grid.Row="4" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold" Content="تاريخ الميلاد " HorizontalAlignment="Stretch" />
+        <TextBox x:Name="txtDate" Grid.Column="3" Grid.Row="4"  Foreground="Black"  VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="1" Width="150"  ToolTip="تاريخ الميلاد "/>
+
+        <Label Grid.Column="1" Grid.Row="5" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold" Content="الهاتف " HorizontalAlignment="Stretch" />
+        <TextBox x:Name="txtPhone" Grid.Column="3" Grid.Row="5"  Foreground="Black"  VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="1" Width="150"  ToolTip="تاريخ الميلاد "/>
+
+        <Label Grid.Column="1" Grid.Row="6" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold" Content="العنوان " HorizontalAlignment="Stretch" />
+        <TextBox x:Name="txtAddress" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="3"  Foreground="Black"  VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="1" Width="300"  ToolTip="تاريخ الميلاد "/>
+
+        <Label Grid.Column="1" Grid.Row="7" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold" Content="البريد الالكتروني " HorizontalAlignment="Stretch" />
+        <TextBox x:Name="txtEmail" Grid.Column="3" Grid.Row="7"  Foreground="Black"  VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="1" Width="150"  ToolTip="تاريخ الميلاد "/>
+
+        <Label Grid.Column="1" Grid.Row="8" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold" Content="رقم الهويه " HorizontalAlignment="Stretch" />
+        <TextBox x:Name="txtID" Grid.Column="3" Grid.Row="8"  Foreground="Black"  VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="1" Width="150"  ToolTip="تاريخ الميلاد "/>
+
+        <Label Grid.Column="1" Grid.Row="9" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold" Content="معلومات اخري " HorizontalAlignment="Stretch" />
+        <TextBox x:Name="txtOtherInfo" Grid.Column="3" Grid.Row="9" Grid.ColumnSpan="3"  Foreground="Black"  VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="1" Width="300"  ToolTip="تاريخ الميلاد "/>
+
+        <Button x:Name="btnAddNewP" Focusable="False" Grid.Column="1" Grid.Row="10" Background="#1e76bb" Width="Auto" Height="auto" Margin="4,4,4,4" BorderBrush="#FF20B4EC" Click="btnAddNewP_Click">
+            <TextBlock x:Name="txtAddNewP" Foreground="White" Text="اضافه " FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="btnCancel" Focusable="False" Grid.Column="5" Grid.Row="10" Background="#1e76bb" Width="Auto" Height="auto" Margin="4,4,4,4" BorderBrush="#FF20B4EC" Click="btnCancel_Click">
+            <TextBlock x:Name="txtCancel" Foreground="White" Text="الغاء " FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Window>

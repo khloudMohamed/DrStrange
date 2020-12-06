@@ -1,0 +1,113 @@
+﻿<Window x:Class="DoctorStrange.SearchForPatient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoctorStrange"
+        mc:Ignorable="d"
+        Title="ايجاد سجل" Height="450" Width="800" x:Name="Search" Background="AliceBlue">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold" Content="رقم السجل " HorizontalAlignment="Left" />
+        <TextBox x:Name="txtPNum" Grid.Column="3" Grid.Row="1"  Foreground="Black"  VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="Black" BorderThickness="1" Width="150" ToolTip="رقم السجل"/>
+        <Button x:Name="btnFind" Focusable="False" Grid.Column="5" Grid.Row="1" Background="#1e76bb" HorizontalAlignment="Left" Width="150" Height="30"  BorderBrush="#FF20B4EC" Click="btnFind_Click">
+            <TextBlock x:Name="txtFind" Foreground="White" Text="ايجاد " FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        
+        <Label Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold" Content="رقم الهويه " HorizontalAlignment="Left" />
+        <TextBox x:Name="txtID" Grid.Column="3" Grid.Row="2"  Foreground="Black"  VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="Black" BorderThickness="1" Width="150" ToolTip="رقم الهويه "/>
+        <Button x:Name="btnFind1" Focusable="False" Grid.Column="5" Grid.Row="2" Background="#1e76bb" HorizontalAlignment="Left" Width="150" Height="30"  BorderBrush="#FF20B4EC" Click="btnFind_Click">
+            <TextBlock x:Name="txtFind1" Foreground="White" Text="ايجاد " FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Label Grid.Column="1" Grid.Row="3" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold" Content="تاريخ الميلاد " HorizontalAlignment="Left" />
+        <TextBox x:Name="txtDateOfBirth" Grid.Column="3" Grid.Row="3"  Foreground="Black"  VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="Black" BorderThickness="1" Width="150" ToolTip="تاريخ الميلاد "/>
+        <Button x:Name="btnFind2" Focusable="False" Grid.Column="5" Grid.Row="3" Background="#1e76bb" HorizontalAlignment="Left" Width="150" Height="30"  BorderBrush="#FF20B4EC" Click="btnFind_Click">
+            <TextBlock x:Name="txtFind2" Foreground="White" Text="ايجاد " FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Label Grid.Column="1" Grid.Row="4" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold" Content="اسم المريض " HorizontalAlignment="Left" />
+        <TextBox x:Name="txtPName" Grid.Column="3" Grid.Row="4"  Foreground="Black"  VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="Black" BorderThickness="1" Width="150" ToolTip="اسم المريض "/>
+        <Button x:Name="btnFind3" Focusable="False" Grid.Column="5" Grid.Row="4" Background="#1e76bb" HorizontalAlignment="Left" Width="150" Height="30"  BorderBrush="#FF20B4EC" Click="btnFind_Click">
+            <TextBlock x:Name="txtFind3" Foreground="White" Text="ايجاد " FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <DataGrid  Name="grdResult" Width="Auto"   AutoGenerateColumns="False" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" HorizontalAlignment="Stretch">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="رقم الملف " Binding="{Binding FileID}" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn Header="الاسم" Binding="{Binding PName ,Mode=TwoWay}"  IsReadOnly="False" Width="30*"/>
+                <DataGridTextColumn Header="اسم العائله"  Binding="{Binding FName}" IsReadOnly="True" Width="40*"/>
+                <DataGridTextColumn Header=" تاريخ الميلاد" Binding="{Binding DOfBirth}" IsReadOnly="True" Width="25*"/>
+                <DataGridTextColumn Header="الهاتف" Binding="{Binding Phone}" IsReadOnly="True" Width="30*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="btnCancel" Focusable="False" Grid.Column="1" Grid.Row="6" Background="#1e76bb" Width="Auto" Height="auto" Margin="4,4,4,4" BorderBrush="#FF20B4EC" Click="btnCancel_Click">
+            <TextBlock x:Name="txtCancel" Foreground="White" Text="الغاء " FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Window>

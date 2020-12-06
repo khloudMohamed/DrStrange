@@ -1,0 +1,133 @@
+﻿<Window x:Class="DoctorStrange.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+
+        xmlns:local="clr-namespace:DoctorStrange"
+        mc:Ignorable="d"
+        Title="المهام " Height="450" Width="800" x:Name="Tasks" Background="AliceBlue">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="50*"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="50*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="txtDate" Grid.Column="1"  Foreground="Black" Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat=dd/M/yyyy}" VerticalAlignment="Center" HorizontalAlignment="Stretch" ToolTip="التاريخ "/>
+        
+        <Button x:Name="btnAddNewP" Focusable="False" Grid.Column="1" Grid.Row="1" Background="#1e76bb" Width="Auto" Height="auto" Margin="4,4,4,4" BorderBrush="#FF20B4EC" Click="btnAddNewP_Click">
+            <TextBlock x:Name="txtAddNewP" Foreground="White" Text="اضافه مريض جديد " FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="btnSearch" Focusable="False" Grid.Column="1" Grid.Row="2" Background="#1e76bb" Width="Auto" Height="auto" Margin="4,4,4,4" BorderBrush="#FF20B4EC" Click="btnSearch_Click">
+            <TextBlock x:Name="txtSearch" Foreground="White" Text="بحث عن مريض " FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="btnShowAll" Focusable="False" Grid.Column="1" Grid.Row="3" Background="#1e76bb" Width="Auto" Height="auto" Margin="4,4,4,4" BorderBrush="#FF20B4EC" Click="btnShowAll_Click">
+            <TextBlock x:Name="txtShowAll" Foreground="White" Text="عرض كل المرضي " FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="btnAppointments" Focusable="False" Grid.Column="1" Grid.Row="4" Background="#1e76bb" Width="Auto" Height="auto" Margin="4,4,4,4" BorderBrush="#FF20B4EC" Click="btnAppointments_Click">
+            <TextBlock x:Name="txtAppointments" Foreground="White" Text="المواعيد " FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="btninfo" Focusable="False" Grid.Column="3" Grid.Row="1" Background="#1e76bb" Width="Auto" Height="auto" Margin="4,4,4,4" BorderBrush="#FF20B4EC" Click="btninfo_Click">
+                            <TextBlock x:Name="txtInfo" Foreground="White" Text="info " FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="DarkGray"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+        <Button x:Name="btnSave" Focusable="False" Grid.Column="3" Grid.Row="2" Background="#1e76bb" Width="Auto" Height="auto" Margin="4,4,4,4" BorderBrush="#FF20B4EC" Click="btnSave_Click">
+            <TextBlock x:Name="txtSave" Foreground="White" Text="حفض نسخ احتياطيه" FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="btnRestore" Focusable="False" Grid.Column="3" Grid.Row="3" Background="#1e76bb" Width="Auto" Height="auto" Margin="4,4,4,4" BorderBrush="#FF20B4EC" Click="btnRestore_Click">
+            <TextBlock x:Name="txtRestor" Foreground="White" Text="استعادة البيانات " FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="btnExit" Focusable="False" Grid.Column="3" Grid.Row="4" Background="#1e76bb" Width="Auto" Height="auto" Margin="4,4,4,4" BorderBrush="#FF20B4EC" Click="btnExit_Click">
+            <TextBlock x:Name="txtExit" Foreground="White" Text="الخروج من البرنامج " FontWeight="Bold" FontSize="20" FontFamily="calibria" FontStretch="Normal" Margin="1" />
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+    </Grid>
+</Window>
